@@ -1,0 +1,57 @@
+name: nivika_asper
+description: Flutter Project For Asper 2022 Hackathon.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  firebase_core: ^1.22.0
+  firebase_auth: ^3.9.0
+  animated_splash_screen: ^1.3.0
+  font_awesome_flutter: ^10.2.1
+  cloud_firestore: ^3.4.5
+  uuid: ^3.0.6
+  firebase_storage: ^10.3.6
+  google_fonts: ^3.0.1
+  firebase_app_check: ^0.0.6+20
+  another_flushbar: ^1.10.29
+  image_picker: ^0.8.5+3
+  image_cropper: ^3.0.0
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.2.9
+
+flutter_native_splash:
+  color: "FFFFFF"
+  image: images/logo1.png
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Black.otf
+        - asset: fonts/Montserrat-Bold.otf
+        - asset: fonts/Montserrat-Italic.otf
+        - asset: fonts/Montserrat-Medium.otf
+        - asset: fonts/Montserrat-Light.otf
+        - asset: fonts/Montserrat-Regular.otf
+        - asset: fonts/Montserrat-SemiBold.otf
+        - asset: fonts/Montserrat-Thin.otf
+    - family: Samarkand
+      fonts:
+        - asset: fonts/samarkand.ttf
