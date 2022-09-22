@@ -37,33 +37,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         },
         startPageIndex: 0,
         footerBuilder: (context, dragDistance, pagesLength, setIndex) {
-          return DecoratedBox(
-            decoration: BoxDecoration(
-              color: primaryColour,
-            ),
-            child: ColoredBox(
-              color: primaryColour,
-              child: Padding(
-                padding: EdgeInsets.all(45),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomIndicator(
-                      netDragPercent: dragDistance,
-                      pagesLength: pagesLength,
-                      indicator: Indicator(
-                        indicatorDesign: IndicatorDesign.line(
-                          lineDesign: LineDesign(
-                            lineType: DesignType.line_uniform,
-                          ),
+          return ColoredBox(
+            color: primaryColour,
+            child: Padding(
+              padding: EdgeInsets.all(45),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomIndicator(
+                    netDragPercent: dragDistance,
+                    pagesLength: pagesLength,
+                    indicator: Indicator(
+                      indicatorDesign: IndicatorDesign.line(
+                        lineDesign: LineDesign(
+                          lineType: DesignType.line_uniform,
                         ),
                       ),
                     ),
-                    index == pagesLength - 1
-                        ? _signupButton
-                        : _skipButton(setIndex: setIndex),
-                  ],
-                ),
+                  ),
+                  index == pagesLength - 1
+                      ? _signupButton
+                      : _skipButton(setIndex: setIndex),
+                ],
               ),
             ),
           );
