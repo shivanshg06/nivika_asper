@@ -5,11 +5,11 @@ class UserModel {
   String? email;
   String? fullName;
   String type = 'buyer'; // Seller, buyer, delivery
-  List<Uuid>? cart;
-  List<Uuid>? wishlist;
+  List<dynamic>? wishlist;
+  List<dynamic>? cart;
   String? phoneNos;
   String? address;
-  
+
   UserModel(
       {this.email,
       this.fullName,
