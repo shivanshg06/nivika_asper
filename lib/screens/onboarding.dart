@@ -123,25 +123,24 @@ PageModel pageStyles(BuildContext context, String title, String content) {
       width: MediaQuery.of(context).size.width,
       color: primaryColour,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(
-            20, MediaQuery.of(context).size.height * 0.10, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset('images/logo_temp.png'),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 35,
-                color: accentColour,
-                fontWeight: FontWeight.bold,
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset('images/logo_temp.png'),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 35,
+                  color: accentColour,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              content,
-            ),
-          ],
+              SizedBox(height: 10),
+              Text(content),
+            ],
+          ),
         ),
       ),
     ),
