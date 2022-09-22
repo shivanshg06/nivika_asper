@@ -31,7 +31,7 @@ class CompleteProfile extends StatefulWidget {
 class _CompleteProfileState extends State<CompleteProfile> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
-  File? imageFile;
+  final TextEditingController _addressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +52,11 @@ class _CompleteProfileState extends State<CompleteProfile> {
                 const SizedBox(height: 10),
                 fewSteps(),
                 textField1('Enter Your Name', _nameController, false,
-                    Icons.email_rounded, TextInputType.name),
-                textField1('Enter Phone Number', _phoneController, true,
-                    Icons.lock_rounded, TextInputType.phone),
+                    Icons.person_rounded, TextInputType.name),
+                textField1('Enter Phone Number', _phoneController, false,
+                    Icons.phone_rounded, TextInputType.phone),
+                textField1('Enter Your Address', _phoneController, false,
+                    Icons.location_on_rounded, TextInputType.text),
                 const SizedBox(height: 10),
                 button2(callback: upLoadData, text: 'Set Data'),
               ],
@@ -94,47 +96,15 @@ class _CompleteProfileState extends State<CompleteProfile> {
     );
   }
 
-  void selectImage(ImageSource source) async {
-    XFile? pickedFile = await ImagePicker().pickImage(source: source);
-    if (pickedFile != null) {
-      cropImage(pickedFile);
-    }
-  }
-
-  void cropImage(XFile file) async {
-    CroppedFile? croppedImage = await ImageCropper().cropImage(
-      sourcePath: file.path,
-      aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
-      compressQuality: 25,
-    );
-    if (croppedImage != null) {
-      imageFile = File(croppedImage.path);
-    }
-  }
-
-  void checkNull() {
-    String name = _nameController.text.trim();
-    if (name.isEmpty || imageFile == null) {
-      log('check null');
-      showSimpleSnackbar(context, 'Incomplete Fields',
-          'Please select a profile Picture and Enter your full name.');
-    } else {
-      log('uploading');
-      upLoadData();
-    }
-  }
-
   void upLoadData() async {
     UIHelper.showLoadingDialog('Uploading Image...\nPlease wait', context);
-    UploadTask uploadTask = FirebaseStorage.instance
-        .ref('profilePictures')
-        .child(widget.userModel.uid.toString())
-        .putFile(imageFile!);
     String name = _nameController.text.trim();
     String phone = _phoneController.text.trim();
+    String address = _addressController.text.trim();
 
     widget.userModel.fullName = name;
     widget.userModel.phoneNos = phone;
+    widget.userModel.address = address;
 
     await FirebaseFirestore.instance
         .collection('users')
