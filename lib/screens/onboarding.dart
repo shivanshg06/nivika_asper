@@ -97,10 +97,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         borderRadius: defaultProceedButtonBorderRadius,
         onTap: () {
           Navigator.popUntil(context, (route) => route.isFirst);
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: ((context) => SignUpScreen()),
+              builder: (context) => const SignUpScreen(),
             ),
           );
         },
