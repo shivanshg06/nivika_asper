@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages, avoid_unnecessary_containers, await_only_futures
+// ignore_for_file: depend_on_referenced_packages, avoid_unnecessary_containers, await_only_futures, unused_import
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

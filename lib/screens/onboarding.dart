@@ -14,7 +14,6 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   int index = 0;
-  static const width = 100.0;
   @override
   void initState() {
     super.initState();
