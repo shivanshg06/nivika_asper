@@ -131,7 +131,7 @@ PageModel pageStyles(BuildContext context, String title, String content) {
           children: [
             Image.asset('images/logo_temp.png'),
             Text(
-              'The First Step?',
+              title,
               style: TextStyle(
                 fontSize: 35,
                 color: accentColour,
@@ -151,7 +151,7 @@ PageModel pageStyles(BuildContext context, String title, String content) {
 
 List<String> onboardingTitles = [
   'The First Step!',
-  'Where DO We Stand?',
+  'Where Do We Stand?',
   'How Do We Do It?',
   'Our Story!',
   'Our Future Goals',
