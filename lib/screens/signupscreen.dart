@@ -37,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Image.asset('images/logo_temp.jpg'),
+                Image.asset('images/logo_temp.png'),
                 textField1('Enter Email', _emailController, false,
                     Icons.email_rounded, TextInputType.emailAddress),
                 textField1('Enter Password', _passController, true,

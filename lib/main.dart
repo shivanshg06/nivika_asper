@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/dashboard.dart';
+import 'package:nivika_asper/screens/onboarding.dart';
 import 'package:nivika_asper/screens/signin_screen.dart';
 import 'package:nivika_asper/utils/firebase_helper.dart';
 
@@ -37,6 +38,9 @@ class MyAppLogged extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
       debugShowCheckedModeBanner: false,
       home: DashBoard(userModel: userModel!, firebaseUser: firebaseUser!),
     );
@@ -50,10 +54,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Monsterrat',
+        fontFamily: 'Poppins',
       ),
       debugShowCheckedModeBanner: false,
-      home: const SignInScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }

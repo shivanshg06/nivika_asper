@@ -44,7 +44,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // Image.asset('images/logo_temp.jpg'),
+                Image.asset('images/logo_temp.png'),
                 const Text(
                   'NIVIKA',
                   style: TextStyle(),

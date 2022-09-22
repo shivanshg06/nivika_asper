@@ -36,7 +36,7 @@ class _SignInScreenState extends State<SignInScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Image.asset('images/logo_temp.jpg'),
+                Image.asset('images/logo_temp.png'),
                 const SizedBox(height: 30),
                 textField1('Enter Email', _emailController, false,
                     Icons.email_rounded, TextInputType.emailAddress),
