@@ -54,3 +54,6 @@ flutter:
     - family: Samarkand
       fonts:
         - asset: fonts/samarkand.ttf
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
