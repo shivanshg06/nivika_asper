@@ -4,7 +4,6 @@ class UserModel {
   String? uid;
   String? email;
   String? fullName;
-  String type = 'buyer'; // Seller, buyer, delivery
   List<dynamic>? wishlist;
   List<dynamic>? cart;
   String? phoneNos;
@@ -23,7 +22,6 @@ class UserModel {
     uid = map['uid'];
     fullName = map['fullName'];
     email = map['email'];
-    type = map['type'];
     cart = map['cart'];
     wishlist = map['wishlist'];
     phoneNos = map['phoneNos'];
@@ -35,7 +33,6 @@ class UserModel {
       "uid": uid,
       "fullName": fullName,
       "email": email,
-      "type": type,
       "cart": cart,
       "wishlist": wishlist,
       "phoneNos": phoneNos,
