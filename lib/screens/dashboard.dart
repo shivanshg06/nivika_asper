@@ -19,7 +19,10 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
   int pageIndex = 0;
   late List<StatefulWidget> navPages = [
-    const HomeScreen(),
+    HomeScreen(
+      firebaseUser: widget.firebaseUser,
+      userModel: widget.userModel,
+    ),
     ProfileScreen(
       firebaseUser: widget.firebaseUser,
       userModel: widget.userModel,

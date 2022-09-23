@@ -1,9 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/widgets/reusableWidgets.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import '../models/user.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen(
+      {Key? key, required this.userModel, required this.firebaseUser})
+      : super(key: key);
+  final UserModel userModel;
+  final User firebaseUser;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -43,7 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: TabBarView(
           children: [
-            HandicraftsHomeScreen(),
+            HandicraftsHomeScreen(
+              firebaseUser: widget.firebaseUser,
+              userModel: widget.userModel,
+            ),
             FoodSnacksHomeScreen(),
           ],
         ),
@@ -53,13 +63,49 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class HandicraftsHomeScreen extends StatefulWidget {
-  const HandicraftsHomeScreen({Key? key}) : super(key: key);
+  const HandicraftsHomeScreen(
+      {Key? key, required this.userModel, required this.firebaseUser})
+      : super(key: key);
+  final UserModel userModel;
+  final User firebaseUser;
 
   @override
   State<HandicraftsHomeScreen> createState() => _HandicraftsHomeScreenState();
 }
 
 class _HandicraftsHomeScreenState extends State<HandicraftsHomeScreen> {
+  final carImages = [
+    Card(
+      child: Image(
+        image: AssetImage('images/handicraft_car1.png'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    Card(
+      child: Image(
+        image: AssetImage('images/handicraft_car2.png'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    Card(
+      child: Image(
+        image: AssetImage('images/handicraft_car3.png'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    Card(
+      child: Image(
+        image: AssetImage('images/handicraft_car4.png'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    Card(
+      child: Image(
+        image: AssetImage('images/handicraft_car5.png'),
+        fit: BoxFit.cover,
+      ),
+    ),
+  ];
   final List<ListTile> items = [
     ReusableListTile(
       title: Row(
@@ -236,8 +282,16 @@ class _HandicraftsHomeScreenState extends State<HandicraftsHomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Welcome ',
+                'Welcome, ',
                 style: TextStyle(fontSize: 30),
+              ),
+              Text(
+                widget.userModel.fullName!.toUpperCase(),
+                style: TextStyle(
+                  color: secondaryColour,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               Divider(
                 color: secondaryColour,
@@ -251,48 +305,62 @@ class _HandicraftsHomeScreenState extends State<HandicraftsHomeScreen> {
                   ),
                 ),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Card(
-                      child: Image(
-                        image: AssetImage('images/handicraft_car1.png'),
-                        height: 200,
-                        width: 200,
-                      ),
-                    ),
-                    Card(
-                      child: Image(
-                        image: AssetImage('images/handicraft_car2.png'),
-                        height: 200,
-                        width: 200,
-                      ),
-                    ),
-                    Card(
-                      child: Image(
-                        image: AssetImage('images/handicraft_car3.png'),
-                        height: 150,
-                        width: 300,
-                      ),
-                    ),
-                    Card(
-                      child: Image(
-                        image: AssetImage('images/handicraft_car4.png'),
-                        height: 200,
-                        width: 200,
-                      ),
-                    ),
-                    Card(
-                      child: Image(
-                        image: AssetImage('images/handicraft_car5.png'),
-                        height: 200,
-                        width: 200,
-                      ),
-                    ),
-                  ],
-                ), //Carousel
+              CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 175,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 3),
+                  viewportFraction: 1,
+                  enlargeCenterPage: true,
+                ),
+                itemCount: carImages.length,
+                itemBuilder: (context, index, realIndex) {
+                  final carouselImg = carImages[index];
+                  return buildImage(carouselImg, index);
+                },
               ),
+              // SingleChildScrollView(
+              //   scrollDirection: Axis.horizontal,
+              //   child: Row(
+              //     children: [
+              //       Card(
+              //         child: Image(
+              //           image: AssetImage('images/handicraft_car1.png'),
+              //           height: 200,
+              //           width: 200,
+              //         ),
+              //       ),
+              //       Card(
+              //         child: Image(
+              //           image: AssetImage('images/handicraft_car2.png'),
+              //           height: 200,
+              //           width: 200,
+              //         ),
+              //       ),
+              //       Card(
+              //         child: Image(
+              //           image: AssetImage('images/handicraft_car3.png'),
+              //           height: 150,
+              //           width: 300,
+              //         ),
+              //       ),
+              //       Card(
+              //         child: Image(
+              //           image: AssetImage('images/handicraft_car4.png'),
+              //           height: 200,
+              //           width: 200,
+              //         ),
+              //       ),
+              //       Card(
+              //         child: Image(
+              //           image: AssetImage('images/handicraft_car5.png'),
+              //           height: 200,
+              //           width: 200,
+              //         ),
+              //       ),
+              //     ],
+              //   ), //Carousel
+              // ),
               Container(
                 child: Text(
                   'Our Top Picks!',
@@ -382,4 +450,11 @@ class _FoodSnacksHomeScreenState extends State<FoodSnacksHomeScreen> {
       ),
     );
   }
+}
+
+Widget buildImage(Card carouselImg, int index) {
+  return Container(
+    margin: EdgeInsets.symmetric(horizontal: 12),
+    child: carouselImg,
+  );
 }
