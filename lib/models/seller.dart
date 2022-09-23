@@ -1,4 +1,3 @@
-import 'package:nivika_asper/models/product.dart';
 import 'package:nivika_asper/models/user.dart';
 
 class SellerModel {
@@ -33,6 +32,7 @@ class SellerModel {
     address = oldUser.address;
     aadhaar = naadhaar;
   }
+
   SellerModel.fromMap(Map<String, dynamic> map){
     uid = map['uid'];
     email = map['email'];
