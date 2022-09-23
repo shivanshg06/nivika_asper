@@ -5,12 +5,12 @@ class SellerModel {
   String? uid;
   String? email;
   String? fullName;
-  String type = 'buyer'; // Seller, buyer, delivery
   List<dynamic>? wishlist;
   List<dynamic>? cart;
   String? phoneNos;
   String? address;
-  List<ProductModel>? products;
+  List<dynamic>? products;
+  String? aadhaar;
 
   SellerModel(
       {this.email,
@@ -19,9 +19,11 @@ class SellerModel {
       this.cart,
       this.wishlist,
       this.phoneNos,
-      this.address, this.products});
+      this.address,
+      this.products,
+      this.aadhaar});
 
-  SellerModel.fromUser(UserModel oldUser) {
+  SellerModel.fromUser(UserModel oldUser, String naadhaar) {
     uid = oldUser.uid;
     email = oldUser.email;
     fullName = oldUser.fullName;
@@ -29,5 +31,17 @@ class SellerModel {
     cart = oldUser.cart;
     phoneNos = oldUser.phoneNos;
     address = oldUser.address;
+    aadhaar = naadhaar;
+  }
+  SellerModel.fromMap(Map<String, dynamic> map){
+    uid = map['uid'];
+    email = map['email'];
+    fullName = map['fullName'];
+    cart = map['cart'];
+    wishlist = map['wishlist'];
+    phoneNos = map['phoneNos'];
+    address = map['address'];
+    products = map['products'];
+    aadhaar = map['aadhaar'];
   }
 }

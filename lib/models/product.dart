@@ -1,7 +1,8 @@
 import 'package:uuid/uuid.dart';
 
 class ProductModel {
-  Uuid? uid;
+  String? uid;
+  String? seller;
   String? name;
   String? description;
   String? pricing;
@@ -16,6 +17,7 @@ class ProductModel {
       this.name,
       this.description,
       this.pricing,
+      this.seller,
       this.imgLink,
       this.rating,
       this.readyToOrder,
@@ -32,7 +34,10 @@ class ProductModel {
     readyToOrder = map['readyToOrder'];
     quantityOrWaitTime = map['quantityOrWaitTime'];
     reviews = map['reviews'];
+    seller = map['seller'];
+    
   }
+
   Map<String, dynamic> toMap() {
     return {
       "uid": uid,
@@ -44,6 +49,7 @@ class ProductModel {
       "readyToOrder": readyToOrder,
       "quantityOrWaitTime": quantityOrWaitTime,
       "reviews": reviews,
+      "seller": seller,
     };
   }
 }
