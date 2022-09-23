@@ -55,7 +55,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                     Icons.person_rounded, TextInputType.name),
                 textField1('Enter Phone Number', _phoneController, false,
                     Icons.phone_rounded, TextInputType.phone),
-                textField1('Enter Your Address', _phoneController, false,
+                textField1('Enter Your Address', _addressController, false,
                     Icons.location_on_rounded, TextInputType.text),
                 const SizedBox(height: 10),
                 button2(callback: upLoadData, text: 'Set Data'),

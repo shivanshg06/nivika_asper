@@ -17,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       padding: EdgeInsets.fromLTRB(
           20, MediaQuery.of(context).size.height * 0.10, 20, 0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
@@ -30,6 +30,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   context: context,
                   text: 'Your WishList',
                   callback: ordersFunc),
+            ],
+          ),
+          Row(
+            children: [
+              button3(
+                  context: context, text: 'Buy Again', callback: buyAgainFunc),
+              button3(
+                  context: context,
+                  text: 'Your Account',
+                  callback: accountsFunc),
             ],
           ),
           button2(
@@ -52,4 +62,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void wishlistFunc() {}
   void ordersFunc() {}
+  void buyAgainFunc() {}
+  void accountsFunc() {}
 }
