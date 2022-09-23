@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/dashboard.dart';
+import 'package:nivika_asper/screens/optionsScreen.dart';
 import 'package:nivika_asper/screens/signupscreen.dart';
 import 'package:nivika_asper/utils/ui_helper.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
@@ -139,7 +140,7 @@ class _SignInScreenState extends State<SignInScreen> {
         MaterialPageRoute(
           builder: ((context) {
             log('$credential');
-            return DashBoard(
+            return OptionsScreen(
               userModel: userModel,
               firebaseUser: credential!.user!,
             );

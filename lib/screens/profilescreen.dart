@@ -44,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   Text(
-                    widget.userModel.fullName!.toUpperCase(),
+                    widget.userModel.fullName.split(' ').first.toUpperCase(),
                     style: TextStyle(
                       color: accentColour,
                       fontSize: 30,
@@ -141,9 +141,3 @@ class _ProfileScreenState extends State<ProfileScreen> {
             userModel: widget.userModel, firebaseUser: widget.firebaseUser));
   }
 }
-
-
-/*
-Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: ((context) => BecomeSeller())));
-        */
