@@ -4,7 +4,8 @@ import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
 
 class BecomeSeller extends StatefulWidget {
-  const BecomeSeller({super.key, required this.userModel, required this.firebaseUser});
+  const BecomeSeller(
+      {super.key, required this.userModel, required this.firebaseUser});
   final UserModel userModel;
   final User firebaseUser;
   @override
@@ -12,6 +13,7 @@ class BecomeSeller extends StatefulWidget {
 }
 
 class _BecomeSellerState extends State<BecomeSeller> {
+  bool agreement = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +33,28 @@ class _BecomeSellerState extends State<BecomeSeller> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child:  Padding(
-          padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-          child: SingleChildScrollView(child: Column(),)
-        ),
+        child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: agreement,
+                        onChanged: ((value) {
+                          agreement = !agreement;
+                        }),
+                      ),
+                      Text(
+                        'By clicking you agree to our \nterms and conditions.',
+                        softWrap: true,
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            )),
       ),
     );
   }

@@ -135,11 +135,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void signUp(String email, String pass) async {
     UserCredential? credential;
-    UIHelper.showLoadingDialog('Signing you up....', context);
+    // UIHelper.showLoadingDialog('Signing you up....', context);
     try {
       credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: pass);
+      log('msg1');
     } on FirebaseAuthException catch (error) {
+      log('err1');
       Navigator.pop(context);
       if (error.code == 'email-already-in-use') {
         log(error.code);
@@ -156,11 +158,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
         );
       }
     }
+    log('msg2');
     if (credential != null) {
       String uid = credential.user!.uid;
       UserModel newUser = UserModel(
         uid: uid,
         email: email,
+        address: '',
+        cart: [],
+        fullName: '',
+        phoneNos: '',
+        wishlist: [],
       );
       await FirebaseFirestore.instance
           .collection('users')
@@ -168,6 +176,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           .set(newUser.toMap())
           .then(
         (value) {
+          log('msg3');
           Navigator.pop(context);
           Navigator.push(
             context,

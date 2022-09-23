@@ -45,10 +45,10 @@ class _CompleteProfileState extends State<CompleteProfile> {
             child: Column(
               children: [
                 Image.asset('images/logo_temp.png'),
-                const Text(
-                  'NIVIKA',
-                  style: TextStyle(),
-                ),
+                // const Text(
+                //   'NIVIKA',
+                //   style: TextStyle(),
+                // ),
                 const SizedBox(height: 10),
                 fewSteps(),
                 textField1('Enter Your Name', _nameController, false,
@@ -97,7 +97,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
   }
 
   void upLoadData() async {
-    UIHelper.showLoadingDialog('Uploading Image...\nPlease wait', context);
+    // UIHelper.showLoadingDialog('Uploading Image...\nPlease wait', context);
     String name = _nameController.text.trim();
     String phone = _phoneController.text.trim();
     String address = _addressController.text.trim();

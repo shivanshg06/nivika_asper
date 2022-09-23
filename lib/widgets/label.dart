@@ -9,11 +9,13 @@ class InformtionLabel1 extends StatefulWidget {
       required this.context,
       required this.title,
       required this.iconData,
-      required this.callback});
+      required this.callback,
+      required this.extraInfo});
   BuildContext context;
   String title;
   IconData iconData;
   VoidCallback callback;
+  String extraInfo;
   @override
   State<InformtionLabel1> createState() => _InformtionLabel1State();
 }
@@ -25,16 +27,16 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
       onTap: widget.callback,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 130,
+        height: 120,
         decoration: BoxDecoration(
           color: primaryColour,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: accentColour),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              offset: Offset.fromDirection(0.3),
-            ),
-          ],
+          // boxShadow: <BoxShadow>[
+          //   BoxShadow(
+          //     offset: Offset.fromDirection(0.3),
+          //   ),
+          // ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -49,15 +51,21 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
                     widget.title,
                     style: TextStyle(
                       color: accentColour,
-                      fontSize: 30,
+                      fontSize: 20,
                     ),
+                  ),
+                  Text(
+                    widget.extraInfo,
+                    style: TextStyle(
+                        // fontSize: 5,
+                        ),
                   ),
                 ],
               ),
               Icon(
                 widget.iconData,
                 color: accentColour,
-                size: 60,
+                size: 40,
               )
             ],
           ),
