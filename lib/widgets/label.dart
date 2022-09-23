@@ -32,11 +32,6 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
           color: primaryColour,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: accentColour),
-          // boxShadow: <BoxShadow>[
-          //   BoxShadow(
-          //     offset: Offset.fromDirection(0.3),
-          //   ),
-          // ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -121,7 +116,7 @@ class _InformtionLabel2State extends State<InformtionLabel2> {
                       fontSize: 20,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: 250,
                     child: Text(
                       widget.extraInfo,

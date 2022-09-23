@@ -7,6 +7,7 @@ import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/dashboard.dart';
 import 'package:nivika_asper/screens/onboarding.dart';
+import 'package:nivika_asper/screens/optionsScreen.dart';
 import 'package:nivika_asper/screens/signin_screen.dart';
 import 'package:nivika_asper/utils/firebase_helper.dart';
 
@@ -44,7 +45,7 @@ class MyAppLogged extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColour),
       ),
       debugShowCheckedModeBanner: false,
-      home: DashBoard(userModel: userModel!, firebaseUser: firebaseUser!),
+      home: OptionsScreen(userModel: userModel!, firebaseUser: firebaseUser!),
     );
   }
 }
