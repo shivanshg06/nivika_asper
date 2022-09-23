@@ -20,6 +20,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Row(
+            children: [
+              button3(
+                  context: context,
+                  text: 'Your WishList',
+                  callback: wishlistFunc),
+              button3(
+                  context: context,
+                  text: 'Your WishList',
+                  callback: ordersFunc),
+            ],
+          ),
           button2(
             callback: signOut,
             text: 'Sign Out',
@@ -37,4 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       }));
     });
   }
+
+  void wishlistFunc() {}
+  void ordersFunc() {}
 }

@@ -123,7 +123,7 @@ PageModel pageStyles(BuildContext context, String title, String content) {
       width: MediaQuery.of(context).size.width,
       color: primaryColour,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+        padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
