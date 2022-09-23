@@ -26,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   Text(
-                    widget.userModel.fullName!.toUpperCase(),
+                    widget.userModel.fullName.split(' ').first.toUpperCase(),
                     style: TextStyle(
                       color: accentColour,
                       fontSize: 30,
@@ -88,7 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               extraInfo: 'Make Your Wishes Come True,\nClick Here To View.',
             ),
             const SizedBox(height: 10),
-            InformtionLabel1(
+            InformtionLabel2(
               context: context,
               title: 'Your Address',
               iconData: Icons.location_on,
@@ -105,6 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               callback: signOut,
               text: 'Sign Out',
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),
@@ -141,9 +142,3 @@ class _ProfileScreenState extends State<ProfileScreen> {
             userModel: widget.userModel, firebaseUser: widget.firebaseUser));
   }
 }
-
-
-/*
-Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: ((context) => BecomeSeller())));
-        */

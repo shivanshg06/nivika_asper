@@ -13,6 +13,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/dashboard.dart';
+import 'package:nivika_asper/screens/optionsScreen.dart';
 import 'package:nivika_asper/utils/ui_helper.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 import 'package:nivika_asper/widgets/textfields.dart';
@@ -115,7 +116,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => DashBoard(
+          builder: (context) => OptionsScreen(
             firebaseUser: widget.firebaseUser1,
             userModel: widget.userModel,
           ),
