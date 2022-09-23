@@ -1,27 +1,27 @@
 
 class ProductModel {
-  String? uid;
-  String? seller;
-  String? name;
-  String? description;
-  String? pricing;
-  String? imgLink;
-  double? rating;
-  bool? readyToOrder;
-  int? quantityOrWaitTime;
-  List<dynamic>? reviews;
+  late String uid;
+  late String seller;
+  late String name;
+  late String description;
+  late String pricing;
+  late String imgLink;
+  late double rating;
+  late bool readyToOrder;
+  late int quantityOrWaitTime;
+  late List<dynamic> reviews;
 
   ProductModel(
-      {this.uid,
-      this.name,
-      this.description,
-      this.pricing,
-      this.seller,
-      this.imgLink,
-      this.rating,
-      this.readyToOrder,
-      this.quantityOrWaitTime,
-      this.reviews});
+      {required this.uid,
+      required this.name,
+      required this.description,
+      required this.pricing,
+      required this.seller,
+      required this.imgLink,
+      required this.rating,
+      required this.readyToOrder,
+      required this.quantityOrWaitTime,
+      required this.reviews});
 
   ProductModel.fromMap(Map<String, dynamic> map) {
     uid = map['uid'];

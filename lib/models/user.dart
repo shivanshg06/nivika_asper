@@ -1,21 +1,21 @@
 class UserModel {
-  String? uid;
-  String? email;
-  String? fullName;
-  List<dynamic>? wishlist;
-  List<dynamic>? cart;
-  String? phoneNos;
-  String? address;
+  late String uid;
+  late String email;
+  late String fullName;
+  late List<dynamic> wishlist;
+  late List<dynamic> cart;
+  late String phoneNos;
+  late String address;
   late bool seller;
 
   UserModel(
-      {this.email,
-      this.fullName,
-      this.uid,
-      this.cart,
-      this.wishlist,
-      this.phoneNos,
-      this.address,
+      {required this.email,
+      required this.fullName,
+      required this.uid,
+      required this.cart,
+      required this.wishlist,
+      required this.phoneNos,
+      required this.address,
       this.seller = false});
 
   UserModel.fromMap(Map<String, dynamic> map) {
