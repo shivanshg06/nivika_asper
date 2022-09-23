@@ -142,6 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       log('msg1');
     } on FirebaseAuthException catch (error) {
       log('err1');
+      log('$error');
       Navigator.pop(context);
       if (error.code == 'email-already-in-use') {
         log(error.code);
@@ -183,7 +184,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             MaterialPageRoute(
               builder: (context) => CompleteProfile(
                 userModel: newUser,
-                firebaseUser1: credential!.user!,
+                firebaseUser: credential!.user!,
               ),
             ),
           );

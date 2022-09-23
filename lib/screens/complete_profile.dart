@@ -20,9 +20,9 @@ import 'package:nivika_asper/widgets/textfields.dart';
 
 class CompleteProfile extends StatefulWidget {
   final UserModel userModel;
-  final User firebaseUser1;
+  final User firebaseUser;
   const CompleteProfile(
-      {Key? key, required this.userModel, required this.firebaseUser1})
+      {Key? key, required this.userModel, required this.firebaseUser})
       : super(key: key);
 
   @override
@@ -118,7 +118,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
         context,
         MaterialPageRoute(
           builder: (context) => OptionsScreen(
-            firebaseUser: widget.firebaseUser1,
+            firebaseUser: widget.firebaseUser,
             userModel: widget.userModel,
           ),
         ),
