@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
+import 'package:nivika_asper/models/user.dart';
 
 class BecomeSeller extends StatefulWidget {
-  const BecomeSeller({super.key});
-
+  const BecomeSeller({super.key, required this.userModel, required this.firebaseUser});
+  final UserModel userModel;
+  final User firebaseUser;
   @override
   State<BecomeSeller> createState() => _BecomeSellerState();
 }

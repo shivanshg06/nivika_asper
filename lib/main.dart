@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/dashboard.dart';
 import 'package:nivika_asper/screens/onboarding.dart';
@@ -40,6 +41,7 @@ class MyAppLogged extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Poppins',
+        highlightColor: accentColour,
       ),
       debugShowCheckedModeBanner: false,
       home: DashBoard(userModel: userModel!, firebaseUser: firebaseUser!),
@@ -55,6 +57,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Poppins',
+        highlightColor: accentColour,
       ),
       debugShowCheckedModeBanner: false,
       home: const OnboardingScreen(),

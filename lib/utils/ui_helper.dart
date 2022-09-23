@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
+import 'package:nivika_asper/screens/become_seller.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 
 class UIHelper {
@@ -35,8 +36,8 @@ class UIHelper {
     );
   }
 
-  static void confirmDialog(
-      String title, String description, BuildContext context) {
+  static void confirmDialog(String title, String description,
+      BuildContext context, StatefulWidget stful) {
     AlertDialog confirmDialog = AlertDialog(
       backgroundColor: primaryColour,
       content: Container(
@@ -44,7 +45,7 @@ class UIHelper {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -61,15 +62,21 @@ class UIHelper {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  button3(
+                  button4(
                     context: context,
-                    text: '',
-                    callback: (() {}),
+                    text: 'Confirm',
+                    callback: (() {
+                      Navigator.popUntil(context, (route) => route.isFirst);
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: ((context) => stful)));
+                    }),
+                    width: 100,
                   ),
-                  button3(
+                  button4(
                     context: context,
-                    text: '',
-                    callback: (() {}),
+                    text: 'Cancel',
+                    callback: (() => Navigator.pop(context)),
+                    width: 100,
                   ),
                 ],
               ),

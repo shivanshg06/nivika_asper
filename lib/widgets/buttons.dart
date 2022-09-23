@@ -109,7 +109,8 @@ class button4 extends StatelessWidget {
       {Key? key,
       required this.callback,
       required this.text,
-      required this.context,required this.width})
+      required this.context,
+      required this.width})
       : super(key: key); // Notice the variable type
 
   @override
@@ -122,11 +123,7 @@ class button4 extends StatelessWidget {
         vertical: 10,
       ),
       decoration: BoxDecoration(
-        border: Border.all(
-          color: accentColour,
-        ),
-        borderRadius: BorderRadius.circular(30),
-      ),
+          borderRadius: BorderRadius.circular(30), color: accentColour),
       child: ElevatedButton(
         onPressed: callback,
         style: ButtonStyle(
@@ -144,7 +141,7 @@ class button4 extends StatelessWidget {
             text,
             style: const TextStyle(
               fontSize: 15,
-              color: accentColour,
+              color: primaryColour,
               fontWeight: FontWeight.bold,
             ),
           ),

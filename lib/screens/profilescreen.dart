@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
@@ -126,8 +128,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void sellerFunc() {
     Navigator.popUntil(context, (route) => route.isFirst);
+    log('${MediaQuery.of(context).size.width}');
     UIHelper.confirmDialog(
-        'Become a Seller?', 'description', context);
+        'Become a Seller?',
+        'description',
+        context,
+        BecomeSeller(
+            userModel: widget.userModel, firebaseUser: widget.firebaseUser));
   }
 }
 
