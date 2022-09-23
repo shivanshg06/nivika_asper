@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/main.dart';
+import 'package:nivika_asper/screens/become_seller.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 import 'package:nivika_asper/widgets/label.dart';
 
@@ -26,38 +27,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 button3(
                   context: context,
                   text: 'Your Orders',
-                  callback: wishlistFunc,
-                ),
-                button3(
-                  context: context,
-                  text: 'Your Wish List',
                   callback: ordersFunc,
                 ),
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Row(
-              children: [
                 button3(
                   context: context,
                   text: 'Buy Again',
                   callback: buyAgainFunc,
                 ),
-                button3(
-                  context: context,
-                  text: 'Your Account',
-                  callback: accountsFunc,
-                ),
               ],
             ),
           ),
           const SizedBox(height: 10),
-          InformtionLabel1(context: context),
+          InformtionLabel1(
+            context: context,
+            title: 'Your Account',
+            iconData: Icons.person,
+            callback: accountsFunc,
+          ),
           const SizedBox(height: 20),
-          InformtionLabel1(context: context),
+          InformtionLabel1(
+            context: context,
+            title: 'Your Wish List',
+            iconData: Icons.star_border_outlined,
+            callback: wishlistFunc,
+          ),
           const SizedBox(height: 20),
+          button2(
+            callback: sellerFunc,
+            text: 'Become A Seller',
+          ),
+          const SizedBox(height: 10),
           button2(
             callback: signOut,
             text: 'Sign Out',
@@ -77,7 +76,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void wishlistFunc() {}
+
   void ordersFunc() {}
+
   void buyAgainFunc() {}
+
   void accountsFunc() {}
+
+  void sellerFunc() {
+    Navigator.popUntil(context, (route) => route.isFirst);
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: ((context) => BecomeSeller())));
+  }
 }

@@ -24,6 +24,14 @@ textField1(String display, TextEditingController mainController,
             color: accentColour,
           ),
         ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(40)),
+          borderSide: BorderSide(
+            width: 2,
+            style: BorderStyle.solid,
+            color: accentColour,
+          ),
+        ),
       ),
     ),
   );
