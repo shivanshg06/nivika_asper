@@ -399,25 +399,25 @@ class _HandicraftsHomeScreenState extends State<HandicraftsHomeScreen> {
               ),
               Card(
                 child: ReusableListTile(
-                  title: Text('Item 1'),
+                  title: Text('Apparels'),
                   onTap: () {},
                 ),
               ),
               Card(
                 child: ReusableListTile(
-                  title: Text('Item 1'),
+                  title: Text('Ornaments'),
                   onTap: () {},
                 ),
               ),
               Card(
                 child: ReusableListTile(
-                  title: Text('Item 1'),
+                  title: Text('Classic Decoratives'),
                   onTap: () {},
                 ),
               ),
               Card(
                 child: ReusableListTile(
-                  title: Text('Item 1'),
+                  title: Text('Designer Cutlery'),
                   onTap: () {},
                 ),
               ),
