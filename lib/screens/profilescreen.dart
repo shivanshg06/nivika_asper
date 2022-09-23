@@ -91,7 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               context: context,
               title: 'Your Address',
               iconData: Icons.location_on,
-              callback: wishlistFunc,
+              callback: addressFunc,
             ),
             const SizedBox(height: 20),
             button2(
@@ -125,6 +125,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void buyAgainFunc() {}
 
   void accountsFunc() {}
+
+  void addressFunc() {}
 
   void sellerFunc() {
     Navigator.popUntil(context, (route) => route.isFirst);

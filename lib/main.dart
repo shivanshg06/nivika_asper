@@ -41,7 +41,7 @@ class MyAppLogged extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Poppins',
-        highlightColor: accentColour,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColour),
       ),
       debugShowCheckedModeBanner: false,
       home: DashBoard(userModel: userModel!, firebaseUser: firebaseUser!),
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Poppins',
-        highlightColor: accentColour,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColour),
       ),
       debugShowCheckedModeBanner: false,
       home: const OnboardingScreen(),

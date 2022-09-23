@@ -48,7 +48,6 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
                   Text(
                     widget.title,
                     style: TextStyle(
-                      fontFamily: 'Samarkand',
                       color: accentColour,
                       fontSize: 30,
                     ),

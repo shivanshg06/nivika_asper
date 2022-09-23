@@ -123,7 +123,12 @@ class button4 extends StatelessWidget {
         vertical: 10,
       ),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30), color: accentColour),
+        borderRadius: BorderRadius.circular(30),
+        color: accentColour,
+        border: Border.all(
+          color: accentColour,
+        ),
+      ),
       child: ElevatedButton(
         onPressed: callback,
         style: ButtonStyle(
@@ -141,7 +146,7 @@ class button4 extends StatelessWidget {
             text,
             style: const TextStyle(
               fontSize: 15,
-              color: primaryColour,
+              color: accentColour,
               fontWeight: FontWeight.bold,
             ),
           ),
