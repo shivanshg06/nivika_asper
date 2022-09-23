@@ -39,8 +39,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(
-              20, MediaQuery.of(context).size.height * 0.10, 20, 0),
+          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: SingleChildScrollView(
             child: Column(
               children: [

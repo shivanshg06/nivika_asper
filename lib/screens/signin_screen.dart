@@ -32,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
         width: MediaQuery.of(context).size.width,
         child: Padding(
           padding: EdgeInsets.fromLTRB(
-              20, MediaQuery.of(context).size.height * 0.10, 20, 0),
+              20, MediaQuery.of(context).size.height * 0.05, 20, 0),
           child: SingleChildScrollView(
             child: Column(
               children: [
