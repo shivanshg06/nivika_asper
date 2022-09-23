@@ -8,7 +8,8 @@ class InformtionLabel1 extends StatefulWidget {
       {super.key,
       required this.context,
       required this.title,
-      required this.iconData,required this.callback});
+      required this.iconData,
+      required this.callback});
   BuildContext context;
   String title;
   IconData iconData;
@@ -31,7 +32,7 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
           border: Border.all(color: accentColour),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              offset: Offset.fromDirection(0.8),
+              offset: Offset.fromDirection(0.3),
             ),
           ],
         ),

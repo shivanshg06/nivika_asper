@@ -8,20 +8,22 @@ import 'package:nivika_asper/screens/profilescreen.dart';
 import 'package:nivika_asper/screens/settings_screen.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard(
-      {Key? key, required this.userModel, required this.firebaseUser})
+  DashBoard({Key? key, required this.userModel, required this.firebaseUser})
       : super(key: key);
-  final UserModel userModel;
-  final User firebaseUser;
+  UserModel userModel;
+  User firebaseUser;
   @override
   State<DashBoard> createState() => _DashBoardState();
 }
 
 class _DashBoardState extends State<DashBoard> {
   int pageIndex = 0;
-  final navPages = [
+  late List<StatefulWidget> navPages = [
     const HomeScreen(),
-    const ProfileScreen(),
+    ProfileScreen(
+      firebaseUser: widget.firebaseUser,
+      userModel: widget.userModel,
+    ),
     const CartScreen(),
     const SettingsScreen(),
   ];
