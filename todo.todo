@@ -1,0 +1,28 @@
+
+
+       Profile Screen   
+            |
+            |
+            V
+     users --> agreement --> seller --> upload products --> homescreen --> search --> 
+       |          |             |
+       |          |             |
+       |          V             | 
+       |    Seller Dashboard    V
+       |                       Cart
+       V                  Order History
+    Wishlist 
+     Cart
+  Order History
+
+
+
+
+Advanced Features
+     Filter on Search Screen
+     Order Status
+     Food 
+
+Over Advanced
+     Map Tracking
+

@@ -34,6 +34,7 @@ class button2 extends StatelessWidget {
             text!,
             style: const TextStyle(
               fontSize: 15,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -83,6 +84,7 @@ class button3 extends StatelessWidget {
             style: const TextStyle(
               fontSize: 15,
               color: accentColour,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
