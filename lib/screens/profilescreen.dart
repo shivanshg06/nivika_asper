@@ -6,6 +6,7 @@ import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/main.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/become_seller.dart';
+import 'package:nivika_asper/utils/ui_helper.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 import 'package:nivika_asper/widgets/label.dart';
 
@@ -80,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             InformtionLabel1(
               context: context,
               title: 'Your Wish List',
-              iconData: Icons.star_border_outlined,
+              iconData: Icons.favorite_border,
               callback: wishlistFunc,
             ),
             const SizedBox(height: 20),
@@ -125,7 +126,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void sellerFunc() {
     Navigator.popUntil(context, (route) => route.isFirst);
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: ((context) => BecomeSeller())));
+    UIHelper.confirmDialog(
+        'Become a Seller?', 'description', context);
   }
 }
+
+
+/*
+Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: ((context) => BecomeSeller())));
+        */

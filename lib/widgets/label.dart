@@ -25,7 +25,7 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
       onTap: widget.callback,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 150,
+        height: 130,
         decoration: BoxDecoration(
           color: primaryColour,
           borderRadius: BorderRadius.circular(20),
@@ -42,7 +42,7 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -58,7 +58,7 @@ class _InformtionLabel1State extends State<InformtionLabel1> {
               Icon(
                 widget.iconData,
                 color: accentColour,
-                size: 80,
+                size: 60,
               )
             ],
           ),
