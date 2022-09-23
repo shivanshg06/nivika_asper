@@ -57,3 +57,6 @@ flutter:
     - family: Poppins
       fonts:
         - asset: fonts/Poppins-Regular.otf
+    - family: Willow
+      fonts:
+        - asset: fonts/WillowEden-Regular.otf

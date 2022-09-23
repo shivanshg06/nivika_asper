@@ -7,7 +7,7 @@ class UserModel {
   String? phoneNos;
   String? address;
   late bool seller;
-  
+
   UserModel(
       {this.email,
       this.fullName,
