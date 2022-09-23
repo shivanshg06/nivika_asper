@@ -36,6 +36,7 @@ class _DashBoardState extends State<DashBoard> {
           style: TextStyle(
             fontSize: 30,
             color: accentColour,
+            fontFamily: 'Samarkand',
           ),
         ),
         elevation: 0,

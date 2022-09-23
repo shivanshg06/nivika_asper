@@ -1,16 +1,16 @@
 
 
-       Profile Screen   
-            |
-            |
-            V
+                    Profile Screen   
+                         |
+                         |
+                         V
      users --> agreement --> seller --> upload products --> homescreen --> search --> 
-       |          |             |
-       |          |             |
-       |          V             | 
-       |    Seller Dashboard    V
-       |                       Cart
-       V                  Order History
+       |                          |             |
+       |                          |             |
+       |                          V             | 
+       |                    Seller Dashboard    V
+       |                    Seller Profile     Cart
+       V                                    Order History
     Wishlist 
      Cart
   Order History
