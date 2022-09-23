@@ -15,27 +15,25 @@ class button2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      child: SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: callback,
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            ),
-            backgroundColor: MaterialStateProperty.resolveWith(
-              (states) {
-                return accentColour;
-              },
-            ),
+      width: MediaQuery.of(context).size.width,
+      child: ElevatedButton(
+        onPressed: callback,
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 13),
-            child: Text(
-              text!,
-              style: const TextStyle(
-                fontSize: 15,
-              ),
+          backgroundColor: MaterialStateProperty.resolveWith(
+            (states) {
+              return accentColour;
+            },
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 13),
+          child: Text(
+            text!,
+            style: const TextStyle(
+              fontSize: 15,
             ),
           ),
         ),
@@ -56,27 +54,35 @@ class button3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.4,
-        child: ElevatedButton(
-          onPressed: callback,
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            ),
-            backgroundColor: MaterialStateProperty.resolveWith(
-              (states) {
-                return accentColour;
-              },
-            ),
+      width: MediaQuery.of(context).size.width * 0.4,
+      margin: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.02,
+        vertical: 10,
+      ),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: accentColour,
+        ),
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: ElevatedButton(
+        onPressed: callback,
+        style: ButtonStyle(
+          enableFeedback: false,
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 13),
-            child: Text(
-              text!,
-              style: const TextStyle(
-                fontSize: 15,
-              ),
+          elevation: MaterialStateProperty.resolveWith((states) => 0),
+          backgroundColor:
+              MaterialStateProperty.resolveWith((states) => primaryColour),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 13),
+          child: Text(
+            text!,
+            style: const TextStyle(
+              fontSize: 15,
+              color: accentColour,
             ),
           ),
         ),

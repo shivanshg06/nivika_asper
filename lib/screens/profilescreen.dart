@@ -14,34 +14,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(
-          20, MediaQuery.of(context).size.height * 0.10, 20, 0),
+      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             children: [
               button3(
-                  context: context,
-                  text: 'Your WishList',
-                  callback: wishlistFunc),
+                context: context,
+                text: 'Your WishList',
+                callback: wishlistFunc,
+              ),
               button3(
-                  context: context,
-                  text: 'Your WishList',
-                  callback: ordersFunc),
+                context: context,
+                text: 'Your WishList',
+                callback: ordersFunc,
+              ),
             ],
           ),
           Row(
             children: [
               button3(
-                  context: context, text: 'Buy Again', callback: buyAgainFunc),
+                context: context,
+                text: 'Buy Again',
+                callback: buyAgainFunc,
+              ),
               button3(
-                  context: context,
-                  text: 'Your Account',
-                  callback: accountsFunc),
+                context: context,
+                text: 'Your Account',
+                callback: accountsFunc,
+              ),
             ],
           ),
+          const SizedBox(height: 10),
           button2(
             callback: signOut,
             text: 'Sign Out',

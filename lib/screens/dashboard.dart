@@ -22,8 +22,8 @@ class _DashBoardState extends State<DashBoard> {
   final navPages = [
     const HomeScreen(),
     const ProfileScreen(),
-    const SettingsScreen(),
     const CartScreen(),
+    const SettingsScreen(),
   ];
 
   @override
@@ -88,7 +88,7 @@ class _DashBoardState extends State<DashBoard> {
                 });
               },
               icon: const Icon(
-                Icons.settings_outlined,
+                Icons.shopping_cart_outlined,
                 size: 35,
               ),
               color: pageIndex == 2 ? accentColour : black,
@@ -101,7 +101,7 @@ class _DashBoardState extends State<DashBoard> {
                 });
               },
               icon: const Icon(
-                Icons.shopping_cart_outlined,
+                Icons.menu_outlined,
                 size: 35,
               ),
               color: pageIndex == 3 ? accentColour : black,
