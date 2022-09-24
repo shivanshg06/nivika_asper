@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously, sized_box_for_whitespace
+// ignore_for_file: use_build_context_synchronously, sized_box_for_whitespace, prefer_const_constructors
 
 import 'dart:developer';
 
@@ -10,7 +10,6 @@ import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/complete_profile.dart';
 import 'package:nivika_asper/screens/signin_screen.dart';
-import 'package:nivika_asper/utils/ui_helper.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 import 'package:nivika_asper/widgets/textfields.dart';
 

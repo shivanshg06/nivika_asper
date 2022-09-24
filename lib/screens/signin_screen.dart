@@ -8,10 +8,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/models/user.dart';
-import 'package:nivika_asper/screens/dashboard.dart';
 import 'package:nivika_asper/screens/optionsScreen.dart';
 import 'package:nivika_asper/screens/signupscreen.dart';
-import 'package:nivika_asper/utils/ui_helper.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 import 'package:nivika_asper/widgets/textfields.dart';
 

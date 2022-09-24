@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace, unused_local_variable, unused_import
+// ignore_for_file: sized_box_for_whitespace, unused_local_variable, unused_import, prefer_const_constructors
 
 import 'dart:developer';
 import 'dart:io';

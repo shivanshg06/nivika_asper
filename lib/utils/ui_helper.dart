@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
-import 'package:nivika_asper/screens/become_seller.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 
 class UIHelper {
