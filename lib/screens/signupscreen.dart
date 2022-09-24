@@ -169,7 +169,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         fullName: '',
         phoneNos: '',
         wishlist: [],
+        dev: false,
       );
+      log('$newUser');
       await FirebaseFirestore.instance
           .collection('users')
           .doc(uid)

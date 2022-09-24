@@ -7,6 +7,7 @@ class UserModel {
   late String phoneNos;
   late String address;
   late bool seller;
+  late bool dev;
 
   UserModel(
       {required this.email,
@@ -16,6 +17,7 @@ class UserModel {
       required this.wishlist,
       required this.phoneNos,
       required this.address,
+      this.dev = false,
       this.seller = false});
 
   UserModel.fromMap(Map<String, dynamic> map) {
@@ -27,6 +29,7 @@ class UserModel {
     phoneNos = map['phoneNos'];
     address = map['address'];
     seller = map['seller'];
+    dev = map['dev'];
   }
 
   Map<String, dynamic> toMap() {
@@ -39,6 +42,7 @@ class UserModel {
       "phoneNos": phoneNos,
       "address": address,
       "seller": seller,
+      "dev": dev,
     };
   }
 }

@@ -8,7 +8,7 @@ class button2 extends StatelessWidget {
   String? text;
   VoidCallback? callback;
 
-  button2({Key? key, this.callback, this.text})
+  button2({Key? key, required this.callback, required this.text})
       : super(key: key); // Notice the variable type
 
   @override

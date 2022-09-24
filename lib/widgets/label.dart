@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, prefer_const_literals_to_create_immutables, prefer_const_constructors, library_private_types_in_public_api
+// ignore_for_file: must_be_immutable, prefer_const_literals_to_create_immutables, prefer_const_constructors, library_private_types_in_public_api, unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
 import 'package:nivika_asper/constants/colour_codes.dart';
@@ -119,8 +119,9 @@ class _InformtionLabel2State extends State<InformtionLabel2> {
                   SizedBox(
                     width: 250,
                     child: Text(
-                      widget.extraInfo,
+                      '''${widget.extraInfo}''',
                       overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
                     ),
                   ),
                 ],

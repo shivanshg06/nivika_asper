@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unnecessary_string_interpolations
 
 import 'dart:developer';
 
@@ -8,6 +8,7 @@ import 'package:nivika_asper/constants/colour_codes.dart';
 import 'package:nivika_asper/main.dart';
 import 'package:nivika_asper/models/user.dart';
 import 'package:nivika_asper/screens/become_seller.dart';
+import 'package:nivika_asper/utils/development_helper.dart';
 import 'package:nivika_asper/utils/ui_helper.dart';
 import 'package:nivika_asper/widgets/buttons.dart';
 import 'package:nivika_asper/widgets/label.dart';
@@ -23,6 +24,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  late bool develop = widget.userModel.seller;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -93,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               title: 'Your Address',
               iconData: Icons.location_on,
               callback: addressFunc,
-              extraInfo: widget.userModel.address,
+              extraInfo: '''${widget.userModel.address}''',
             ),
             const SizedBox(height: 10),
             button2(
@@ -106,6 +109,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               text: 'Sign Out',
             ),
             const SizedBox(height: 10),
+            Visibility(
+              visible: develop,
+              child: button2(
+                callback: tempAddProduct,
+                text: 'Help Dev Add Product',
+              ),
+            ),
           ],
         ),
       ),
@@ -140,5 +150,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
         context,
         BecomeSeller(
             userModel: widget.userModel, firebaseUser: widget.firebaseUser));
+  }
+
+  void tempAddProduct() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: ((context) => DevAddProduct()),
+      ),
+    );
   }
 }

@@ -18,10 +18,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'This is settings screen',
-              style: TextStyle(fontSize: 20),
-            ),
             Column(
               children: [
                 ExpansionTile(

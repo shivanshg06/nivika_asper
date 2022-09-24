@@ -1,4 +1,3 @@
-
 class ProductModel {
   late String uid;
   late String seller;
@@ -9,7 +8,8 @@ class ProductModel {
   late double rating;
   late bool readyToOrder;
   late int quantityOrWaitTime;
-  late List<dynamic> reviews;
+  late bool featured;
+  List<Map<String, dynamic>>? reviews;
 
   ProductModel(
       {required this.uid,
@@ -21,7 +21,8 @@ class ProductModel {
       required this.rating,
       required this.readyToOrder,
       required this.quantityOrWaitTime,
-      required this.reviews});
+      required this.reviews,
+      required this.featured});
 
   ProductModel.fromMap(Map<String, dynamic> map) {
     uid = map['uid'];
@@ -34,7 +35,7 @@ class ProductModel {
     quantityOrWaitTime = map['quantityOrWaitTime'];
     reviews = map['reviews'];
     seller = map['seller'];
-    
+    featured = map['featured'];
   }
 
   Map<String, dynamic> toMap() {
@@ -49,6 +50,7 @@ class ProductModel {
       "quantityOrWaitTime": quantityOrWaitTime,
       "reviews": reviews,
       "seller": seller,
+      "featured": featured,
     };
   }
 }
